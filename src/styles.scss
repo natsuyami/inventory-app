@@ -1,1 +1,97 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import 'dist/scss/style-variable.scss';
+@import 'dist/scss/style-mixin.scss';
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: $std-font-size;
+    color: $std-color;
+}
+
+body{
+    outline: 0px;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    background-color: $default-bg-color;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    @extend %header-shared;
+    margin: 5px 10px;
+}
+
+h2{
+    @extend %header-shared;
+    font-size: $sbh-font-size;
+    margin: 5px 10px;
+}
+
+h3{
+    @extend %header-shared;
+    font-size: $sbhs-font-size;
+    margin: 5px 10px;
+}
+
+.navigation{
+    background-color: $default-sec-color;
+    font-size: $sbh-font-size;
+    font-family: $std-font;
+}
+
+.divider-space {
+    flex: 1 1 auto;
+}
+
+// .standard-btn{
+//     @extend %btn-shared;
+//     @include button-filled($color-cancel-pc, $color-cancel-sc, $std-color, $white-color); 
+// }
+
+// .submit-btn{
+//     @extend %btn-shared;
+//     @include button-filled($color-submit-pc, $color-submit-sc, $std-color, $white-color); 
+// }
+
+// .info-btn{
+//     @extend %btn-shared;
+//     @include button-filled($color-info-pc, $color-info-sc, $std-color, $white-color); 
+// }
+
+// .warning-btn{
+//     @extend %btn-shared;
+//     @include button-filled($color-warning-pc, $color-warning-sc, $std-color, $white-color);
+// }
+
+// .danger-btn{
+//     @extend %btn-shared;
+//     @include button-filled($color-danger-pc, $color-danger-sc, $std-color, $white-color); 
+// }
+
+// %btn-shared {
+//     margin: 10px 5px;
+//     padding: 10px 30px;
+//     cursor: pointer;
+//     border-width: 2px;
+//     border-style: solid;
+//     border-radius: 5px;
+//     font-weight: 700;
+//     text-transform: uppercase;
+//     text-align: center;
+//     @include transition-btn(background-color 0.3s ease);
+// }
+
+%header-shared{
+    font-weight: $hdr-font-weight;
+    font-size: $hdr-font-size;
+    text-transform: uppercase;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
