@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import 'dist/scss/style-variable.scss';
 @import 'dist/scss/style-mixin.scss';
 
@@ -40,6 +41,11 @@ h3{
     margin: 5px 10px;
 }
 
+table {
+    margin: 20px auto;
+    width: 90%;
+}
+
 .navigation{
     background-color: $default-sec-color;
     font-size: $sbh-font-size;
@@ -48,6 +54,28 @@ h3{
 
 .divider-space {
     flex: 1 1 auto;
+}
+
+mat-form-field.mat-form-field {
+    color: $std-color;
+    border-color: $std-color;
+}
+
+mat-card.form {
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 50%;
+    background-color: $default-sec-color;
+}
+
+mat-card.form mat-form-field {
+    width: 100%;
+}
+mat-card.form button {
+    width: 50%;
 }
 
 // .standard-btn{
