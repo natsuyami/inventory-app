@@ -2,6 +2,7 @@ export class ApiEndpoints {
     public static baseUrl = "http://localhost:8081/ni";
 
     public static default = {
+        auth : ApiEndpoints.baseUrl.concat("/oauth/token"),
         product : ApiEndpoints.baseUrl.concat("/product"),
         account : ApiEndpoints.baseUrl.concat("/account")
     };

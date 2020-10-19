@@ -1,10 +1,10 @@
 export class ProductModel {
-    id : Number;
-    productName : String;
-    brandName : String;
-    productDescription : String;
-    categoryId : Number;
-    createdBy : String;
+    id : number;
+    productName : string;
+    brandName : string;
+    productDescription : string;
+    categoryId : number;
+    createdBy : string;
     created : Date;
     updated : Date;
 }

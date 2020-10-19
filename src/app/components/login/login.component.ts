@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { HttpParams } from '@angular/common/http';
 
 import { CredentialModel } from '../../model/credential.model';
+import { AccountService } from '../../services/account.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +15,7 @@ export class LoginComponent implements OnInit {
   loginForm : FormGroup;
   hide = true;
 
-  constructor(private formBuilder : FormBuilder) { }
+  constructor(private formBuilder : FormBuilder, private accountService : AccountService) { }
 
   ngOnInit(): void {
     // initialized form with validation
@@ -30,6 +32,12 @@ export class LoginComponent implements OnInit {
   }
 
   loginAccount() {
+    let params = new HttpParams();
+    params = params.set('password', this.user.password);
+    params = params.set('username', this.user.username);
+    params = params.set('grant_type', 'password');
+
+    this.accountService.loginAccount(params);
     alert("Successfully login user " + this.user.username);
   }
 }

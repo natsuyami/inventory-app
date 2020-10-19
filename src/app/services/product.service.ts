@@ -1,23 +1,23 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { HttpParams } from '@angular/common/http';
 
-import { ApiEndpoints } from '../constant/ApiEndpoints';
+import { ApiEndpoints } from '../constant/api-endpoints';
 
 import { ProductDetailsModel } from '../model/product.details.model';
-import { Observable } from 'rxjs';
-
+import { HttpClientService } from './http/http-client.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  constructor(private http : HttpClient) { 
+  constructor(private httpService : HttpClientService) { 
 
   }
 
-  getAllProudcts(): Observable<ProductDetailsModel[]>{
+  getAllProudcts(params : HttpParams): Observable<ProductDetailsModel[]>{
     // get all products
-    return this.http.get<ProductDetailsModel[]>(ApiEndpoints.default.product);
+    return this.httpService.getWithParam(ApiEndpoints.default.product, params, Array<ProductDetailsModel>());
   }
 }
